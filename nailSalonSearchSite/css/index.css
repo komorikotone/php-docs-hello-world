@@ -1,0 +1,600 @@
+#main {
+    width: 60rem;
+    margin: 0 auto;
+}
+
+.hero {
+    background-image: linear-gradient(#fcb9c652 1px, transparent 0),
+        linear-gradient(90deg, #fcb9c652 1px, transparent 0);
+    background-size: 40px 40px;
+    position: relative;
+    /* background: #fff; */
+    overflow: hidden;
+    font-family: system-ui, sans-serif;
+    width: 100vw;
+    height: 100VW;
+    background-color: #FFA0B3;
+}
+
+.hero-container {
+    display: flex;
+    min-width: 1200px;
+    width: 64rem;
+    height: 43rem;
+    margin: 0 14rem auto;
+}
+
+.hero-left {
+    width: 30rem;
+    height: 28rem;
+    margin: auto 0;
+}
+
+.hero-right {
+    width: 33rem;
+    margin: auto 0;
+    margin-left: 3rem;
+}
+
+
+
+.milk {
+    letter-spacing: .08em;
+    opacity: .8;
+    margin-top: 2rem;
+    font-size: 6rem;
+    line-height: 0.5;
+}
+
+.hero-line {
+    font-size: 2rem;
+    line-height: 1.3;
+    margin: 2rem 0 3rem 0;
+    font-weight: bolder;
+}
+
+.hero-line2 {
+    text-align: right;
+}
+
+
+.lead {
+    color: #000000b5;
+}
+
+.slider {
+    position: relative;
+    width: 35rem;
+
+    margin: 5rem 0;
+}
+
+.slides {
+    position: relative;
+    height: 28rem;
+    overflow: hidden;
+    border-radius: 50px;
+}
+
+
+
+
+
+.slide {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+
+.lead {
+    margin-top: 12px;
+    opacity: .85;
+}
+
+h3 {
+    margin-bottom: 1rem;
+}
+
+.top-menu-title {
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.salon-box {
+    background-color: #ffebef30;
+    padding: 2rem;
+    border-radius: 30px;
+}
+
+.salon-name {
+    font-size: 1.5rem;
+    line-height: 1.4;
+}
+
+.fade-text {
+    color: #000;
+}
+
+.menu-list {
+    gap: 4rem;
+}
+
+
+.top-info {
+    margin-top: 10rem;
+    margin-bottom: 7rem;
+}
+
+.kensaku-text {
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.top-menu-pick {
+    width: 70rem;
+    margin: 0 auto;
+    padding-bottom: 5rem;
+}
+
+.btn-reserve {
+    font-weight: 500;
+    height: 1.8rem;
+    font-size: 0.8rem;
+    width: 8rem;
+}
+
+.search-block {
+
+    font-family: "M PLUS 1 Code", monospace;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    padding: 40px;
+    border-radius: 30px;
+    width: 35rem;
+    background-color: #faecef54;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    background: rgba(255, 255, 255, .70);
+    /* 透明の白 */
+    border: 1px solid rgba(255, 255, 255, .35);
+    /* 薄い枠 */
+    backdrop-filter: blur(14px) saturate(140%);
+    -webkit-backdrop-filter: blur(14px) saturate(140%);
+
+    box-shadow: 0 14px 30px rgba(0, 0, 0, .12);
+    border-radius: 28px;
+}
+
+
+.pref-div {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 1.2rem;
+    border-radius: 5px;
+}
+
+.pref {
+    width: 11rem;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    background: #ffd8e0;
+    justify-content: center;
+    position: relative;
+    border-radius: 15px;
+    font-weight: 900;
+    font-size: 20px;
+    color: rgba(40, 25, 30, .80);
+    cursor: pointer;
+    user-select: none;
+    transition: transform .12s ease, background .12s ease, box-shadow .12s ease;
+}
+
+/* 選択中（radioがcheckedのとき） */
+.pref input:checked+.pref-text {
+    width: 11.5rem;
+    background: #ffb3c3;
+    box-shadow: 0 22px 48px rgba(0, 0, 0, .12);
+    border: 1px solid #fcbdcb;
+    border-radius: 15px;
+    color: #000;
+    font-weight: 700;
+}
+
+/* 選択中（かわいく光る） */
+.pref input:checked+.pref-text {
+    position: relative;
+    overflow: hidden;
+    width: 11.5rem;
+    background: linear-gradient(180deg, #f8c7d3 0%, #ffc8d4 55%, #ffb3c3 100%);
+    border: 1px solid #ffb3c3;
+    border-radius: 15px;
+    color: #111;
+    font-weight: 800;
+
+    /* 既存の影＋“ピンクの光”を追加 */
+    box-shadow:
+        0 22px 48px rgba(0, 0, 0, .12),
+        0 0 0 1px rgba(255, 255, 255, .22) inset,
+        0 14px 30px rgba(255, 90, 140, .22);
+}
+
+/* 上のツヤ（ぷるっと見える） */
+.pref input:checked+.pref-text::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(120% 80% at 25% 15%,
+            rgba(255, 255, 255, .18) 25%,
+            transparent 60%);
+    pointer-events: none;
+}
+
+
+.pref-text {
+    transition: transform .12s ease, box-shadow .12s ease;
+}
+
+.pref input:checked+.pref-text:active {
+    transform: scale(.98);
+}
+
+
+@keyframes shine {
+    0% {
+        transform: translateX(-20%) skewX(-18deg);
+        opacity: 0;
+    }
+
+    25% {
+        opacity: .9;
+    }
+
+    55% {
+        opacity: .9;
+    }
+
+    100% {
+        transform: translateX(220%) skewX(-18deg);
+        opacity: 0;
+    }
+}
+
+
+/* .pref {
+    width: 9rem;
+    height: 5rem;
+    background-color: #FEE8EB;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} */
+
+
+.pref-text {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+
+/* タブ */
+.tab-wrapper {
+    margin-top: 0.3rem;
+    margin-bottom: 1.5rem;
+}
+
+.tab-buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    display: flex;
+    gap: 12px;
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 8px 0;
+    cursor: pointer;
+    font-size: 14px;
+    flex: 1;
+    border: none;
+    height: 44px;
+    border-radius: 999px;
+    background: transparent;
+    background: #ffd8e0d7;
+    color: rgba(40, 25, 30, .75);
+    cursor: pointer;
+    transition: all .15s ease;
+}
+
+/* タブ：基本（ぷにっのための準備） */
+.tab-btn {
+    position: relative;
+    overflow: hidden;
+    transition: transform .12s ease, box-shadow .12s ease, filter .12s ease;
+}
+
+/* ぷにっ（押した瞬間） */
+.tab-btn:active {
+    transform: scale(.985);
+}
+
+/* 選択中タブ：ツヤ＋発光 */
+.tab-btn.active {
+    position: relative;
+    overflow: hidden;
+
+    background: linear-gradient(180deg, #f8c7d3 0%, #ffc8d4 55%, #ffb3c3 100%);
+    border: 1px solid #ffb3c3;
+    color: rgba(40, 25, 30, .92) !important;
+    font-weight: 800 !important;
+
+    box-shadow:
+        0 22px 48px rgba(0, 0, 0, .12),
+        0 0 0 1px rgba(255, 255, 255, .22) inset,
+        0 14px 30px rgba(255, 90, 140, .22) !important;
+}
+
+/* ツヤ（ぷるっと） */
+.tab-btn.active::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(120% 80% at 25% 15%,
+            rgba(255, 255, 255, .18) 25%,
+            transparent 60%);
+    pointer-events: none;
+}
+
+.tab-content {
+    display: none;
+    padding: 12px;
+    background: #ffd8e0;
+    min-height: 48px;
+    margin-top: 14px;
+    padding: 0;
+    background: transparent;
+    border: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* タグ */
+.tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    min-height: 64px;
+    padding: 12px;
+
+    border-radius: 18px;
+    background: rgba(255, 255, 255, .2);
+    /* border: 1px solid rgba(255, 255, 255, .45); */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, .08);
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+}
+
+.tag {
+    padding: 6px 12px;
+    background: #ffd8e0;
+    cursor: pointer;
+    font-size: 13px;
+    padding: 10px 14px;
+    border-radius: 999px;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+    transition: .15s ease;
+    color: #000000a2;
+}
+
+
+
+/* 検索ブロック：ガラスカード化 */
+
+
+.search-block button {
+    font-weight: 700;
+    transition: .18s;
+    margin-top: 0.5rem;
+}
+
+
+/* タグ：選択中（ツヤ＋発光＋ぷにっ） */
+.tag {
+    position: relative;
+    overflow: hidden;
+    transition: transform .12s ease, box-shadow .12s ease, filter .12s ease;
+}
+
+/* ぷにっ */
+.tag:active {
+    transform: scale(.98);
+}
+
+.tag.selected {
+    position: relative;
+    overflow: hidden;
+
+    color: #111 !important;
+    font-weight: 850 !important;
+
+    background: linear-gradient(180deg, #f8c7d3 0%, #ffc8d4 55%, #ffb3c3 100%) !important;
+    border: 1px solid #ffb3c3;
+
+    /* タグは小さいので影は控えめにして上品に */
+    box-shadow:
+        0 14px 28px rgba(0, 0, 0, .10),
+        0 0 0 1px rgba(255, 255, 255, .22) inset,
+        0 10px 18px rgba(255, 90, 140, .16) !important;
+}
+
+/* ツヤ */
+.tag.selected::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(120% 90% at 25% 15%,
+            rgba(255, 255, 255, .16) 15%,
+            transparent 62%);
+    pointer-events: none;
+}
+
+@keyframes tagShine {
+    0% {
+        transform: translateX(-20%) skewX(-18deg);
+        opacity: 0;
+    }
+
+    22% {
+        opacity: .75;
+    }
+
+    50% {
+        opacity: .75;
+    }
+
+    100% {
+        transform: translateX(220%) skewX(-18deg);
+        opacity: 0;
+    }
+}
+
+
+/* aタグをボタン化 */
+a.btn {
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    /* 下線消す */
+    color: inherit;
+    /* 文字色継承 */
+    line-height: 1;
+    /* 高さズレ防止 */
+}
+
+/* buttonと見た目揃える */
+button.btn {
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+.search-block .is-active {
+    background: #FEE8EB;
+    border-color: rgba(0, 0, 0, .18);
+}
+
+
+
+.btn-a {
+    background-color: #f5ccd5;
+    height: 2rem;
+    width: 13rem;
+}
+
+
+.btn {
+    margin-bottom: 0;
+height: 2rem;
+}
+
+.btn-b {
+    background: linear-gradient(180deg, #fdf0f3f5 0%, #fdeaef 55%, #ffdbe3 100%);
+    height: 2rem;
+    width: 13rem;
+    border: #fcbdcb 1px solid;
+    box-shadow: none;
+}
+
+/* 立体ボタン（基本） */
+
+
+
+.hero-card {
+    width: 100vw;
+    padding-top: 5%;
+}
+
+.search-block {
+    margin: 0 auto;
+    margin-bottom: 8rem;
+}
+
+footer {
+    margin-top: 0;
+}
+
+.pref-row {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    padding: 8px 6px 12px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+}
+
+.pref-row::-webkit-scrollbar {
+    height: 6px;
+}
+
+.pref-row::-webkit-scrollbar-thumb {
+    border-radius: 999px;
+    background: rgba(0, 0, 0, .12);
+}
+
+.pref-chip {
+    flex: 0 0 auto;
+    height: 52px;
+    padding: 0 22px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, .85);
+    border: 1px solid rgba(0, 0, 0, .08);
+    color: #222;
+    font-weight: 600;
+    scroll-snap-align: start;
+    white-space: nowrap;
+}
+
+.pref-chip.is-active {
+    background: #ffb7cc;
+    border: 1px solid rgba(255, 90, 140, .45);
+    font-weight: 800;
+}
+
+.pref-row {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    /* space-between はやめる */
+    gap: 12px;
+    overflow-x: auto;
+}
+
+.pref-chip {
+    flex: 0 0 auto;
+    /* ←これ大事 */
+    white-space: nowrap;
+}
