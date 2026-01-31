@@ -1,0 +1,453 @@
+      :root {
+          --bg: #cfcfcf;
+          --card: #ffffff;
+          --text: #111;
+          --shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+          --radius: 16px;
+          --maxW: 1100px;
+      }
+
+      * {
+          box-sizing: border-box;
+      }
+
+      html {
+          scroll-behavior: smooth;
+      }
+
+      body {
+          margin: 0;
+          background: var(--bg);
+          color: var(--text);
+          font-family: "Noto Sans JP", system-ui, -apple-system, sans-serif;
+      }
+
+      .container {
+          max-width: 60rem;
+          margin: 0 auto;
+          padding: 0 18px 64px;
+      }
+
+      /* =========================
+      ヘッダー（TOP WORKS PROFILE）
+    ========================= */
+      header {
+          position: sticky;
+          top: 0;
+          z-index: 10;
+          padding: 14px 0;
+          background: linear-gradient(to bottom, rgba(207, 207, 207, 0.96), rgba(207, 207, 207, 0.6));
+          backdrop-filter: blur(6px);
+      }
+
+      .nav {
+          display: flex;
+          justify-content: center;
+          gap: 18px;
+          font-family: "Cinzel", serif;
+          letter-spacing: 0.18em;
+          font-size: 12px;
+          font-weight: 600;
+      }
+
+      .nav a {
+          color: #111;
+          text-decoration: none;
+          padding: 6px 10px;
+          border-radius: 999px;
+          transition: 0.2s;
+          opacity: 0.85;
+      }
+
+      .nav a:hover {
+          background: rgba(255, 255, 255, 0.55);
+          opacity: 1;
+      }
+
+      /* =========================
+      セクション見出し
+    ========================= */
+      .section-title {
+          font-family: "Cinzel", serif;
+          text-align: center;
+          letter-spacing: 0.16em;
+          font-size: 26px;
+          margin: 46px 0 20px;
+      }
+
+      .section-subtitle {
+          text-align: center;
+          opacity: 0.8;
+          font-size: 12px;
+          margin-top: -8px;
+          margin-bottom: 28px;
+      }
+
+      /* =========================
+      TOP（イラスト×名前）
+    ========================= */
+      .top-hero {
+          background: rgba(255, 255, 255, 0.35);
+          border-radius: var(--radius);
+          padding: 28px;
+          box-shadow: var(--shadow);
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          align-items: center;
+          gap: 18px;
+          margin-top: 18px;
+      }
+
+      .top-hero img {
+          width: 100%;
+          max-height: 220px;
+          object-fit: contain;
+          opacity: 0.95;
+      }
+
+      .brand-name {
+          font-family: "Cinzel", serif;
+          letter-spacing: 0.18em;
+          font-size: clamp(18px, 2.6vw, 38px);
+          text-align: center;
+          font-weight: 600;
+      }
+
+      /* =========================
+      WORKS（上：作品カードスライダー）
+    ========================= */
+      .works-slider {
+          position: relative;
+          margin-top: 12px;
+      }
+
+      .slider-track {
+          display: flex;
+          gap: 18px;
+          overflow-x: auto;
+          scroll-snap-type: x mandatory;
+          padding: 12px 48px;
+          scrollbar-width: none;
+      }
+
+      .slider-track::-webkit-scrollbar {
+          display: none;
+      }
+
+      .work-card {
+          min-width: 260px;
+          scroll-snap-align: center;
+          background: rgba(255, 255, 255, 0.55);
+          border-radius: 14px;
+          box-shadow: var(--shadow);
+          padding: 10px;
+          transition: transform 0.15s ease;
+          cursor: pointer;
+      }
+
+      .work-card:hover {
+          transform: translateY(-3px);
+      }
+
+      .work-card img {
+          width: 100%;
+          height: 140px;
+          object-fit: cover;
+          border-radius: 10px;
+          display: block;
+      }
+
+      .work-card .work-title {
+          margin: 10px 6px 4px;
+          font-weight: 600;
+          font-size: 12px;
+      }
+
+      .work-card .work-meta {
+          margin: 0 6px 10px;
+          font-size: 11px;
+          opacity: 0.8;
+      }
+
+      .arrow {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 36px;
+          height: 36px;
+          border-radius: 999px;
+          border: none;
+          background: rgba(255, 255, 255, 0.65);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+          cursor: pointer;
+          display: grid;
+          place-items: center;
+          font-size: 18px;
+      }
+
+      .arrow:hover {
+          background: rgba(255, 255, 255, 0.95);
+      }
+
+      .arrow.left {
+          left: 8px;
+      }
+
+      .arrow.right {
+          right: 8px;
+      }
+
+      .pager {
+          text-align: center;
+          font-size: 12px;
+          opacity: 0.75;
+          margin-top: 10px;
+          letter-spacing: 0.14em;
+      }
+
+      /* =========================
+      WORKS（下：スクショ＋説明 上下）
+    ========================= */
+      .works-detail-vertical {
+          max-width: 46rem;
+          display: grid;
+          gap: 18px;
+          margin: 0 auto;
+      }
+
+      .shots-wrap {
+          position: relative;
+          background: rgba(255, 255, 255, 0.35);
+          border-radius: 16px;
+          box-shadow: var(--shadow);
+          padding: 14px 48px;
+      }
+
+      .shots-track {
+          display: flex;
+          gap: 14px;
+          overflow-x: auto;
+          scroll-snap-type: x mandatory;
+          scrollbar-width: none;
+      }
+
+      .shots-track::-webkit-scrollbar {
+          display: none;
+      }
+
+      .shots-track img {
+          width: 100%;
+          max-width: 520px;
+          height: auto;
+          border-radius: 14px;
+          scroll-snap-align: center;
+          display: block;
+          box-shadow: 0 10px 22px rgba(0, 0, 0, 0.12);
+      }
+
+      .shot-arrow {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 36px;
+          height: 36px;
+          border-radius: 999px;
+          border: none;
+          background: rgba(255, 255, 255, 0.7);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+          cursor: pointer;
+          display: grid;
+          place-items: center;
+          font-size: 18px;
+      }
+
+      .shot-arrow.left {
+          left: 10px;
+      }
+
+      .shot-arrow.right {
+          right: 10px;
+      }
+
+      .shot-arrow:hover {
+          background: rgba(255, 255, 255, 0.95);
+      }
+
+      .detail-card {
+          background: var(--card);
+          border-radius: var(--radius);
+          box-shadow: var(--shadow);
+          padding: 20px 22px;
+      }
+
+      .detail-card h3 {
+          margin: 0 0 6px;
+          font-size: 16px;
+          font-weight: 700;
+      }
+
+      .detail-card .small {
+          font-size: 12px;
+          opacity: 0.85;
+          margin-bottom: 14px;
+      }
+
+      .detail-card h4 {
+          margin: 18px 0 8px;
+          font-size: 12px;
+          letter-spacing: 0.12em;
+          font-family: "Cinzel", serif;
+      }
+
+      .detail-card p,
+      .detail-card li {
+          font-size: 12px;
+          line-height: 1.85;
+          opacity: 0.92;
+      }
+
+      .detail-card ul {
+          padding-left: 18px;
+          margin: 10px 0;
+      }
+
+      /* =========================
+      PROFILE（ここだけ左ロゴsticky）
+    ========================= */
+      .profile-layout {
+          display: grid;
+          grid-template-columns: 26rem 1fr;
+          align-items: start;
+       margin: 0 auto;
+          width: 46rem;
+      }
+
+      .profile-sticky {
+          position: sticky;
+          top: 90px;
+          height: fit-content;
+      }
+
+      .profile-sticky-inner {
+          display: flex;
+          place-items: center;
+      }
+
+      .logo-img {
+          width: 18rem;
+          aspect-ratio: 1/1;
+          background-position: center;
+          background-size: cover;
+          background-image: url(../images/myself.png);
+          filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.25));
+      }
+
+      .logo-img img {
+          object-fit: contain;
+      }
+
+      .vertical-name {
+          writing-mode: vertical-rl;
+          font-weight: 600;
+          font-size: 14px;
+          opacity: 0.9;
+      }
+
+      .right-type {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          flex-shrink: 0;
+      }
+
+      .right-name {
+          transform: translateY(-50%) rotate(90deg);
+          /* 中央にして回転 */
+          transform-origin: center;
+          font-weight: 800;
+          font-size: 2.5rem;
+          margin: 0;
+          line-height: 0.9;
+          /* 0.7〜1で調整 */
+          margin: 0;
+          /* 念のため */
+          padding: 0;
+      }
+
+
+
+      /* 下の小さいやつ */
+      .meta {
+          font-family: "Cinzel", serif;
+          /* 英字の雰囲気 */
+          font-weight: 600;
+          font-size: 1.2rem;
+          letter-spacing: 0.18em;
+          line-height: 1.1;
+          text-align: center;
+          color: #000;
+      }
+
+      .meta .dot {
+          font-size: 16px;
+          display: inline-block;
+          transform: translateY(-1px);
+      }
+
+      .meta .place {
+          font-size: 12px;
+          letter-spacing: 0.22em;
+      }
+
+
+      .profile-grid {
+          display: grid;
+          gap: 18px;
+      }
+
+      .info-card {
+          background: var(--card);
+          border-radius: var(--radius);
+          box-shadow: var(--shadow);
+          padding: 2rem 3rem;
+      }
+
+      .info-card h4 {
+          margin: 0 0 10px;
+          font-family: "Cinzel", serif;
+          letter-spacing: 0.16em;
+          font-size: 1.6rem;
+          text-align: center;
+      }
+
+      .info-card p {
+          margin: 0;
+          font-size: 0.9rem;
+          line-height: 1.9;
+          opacity: 0.92;
+      }
+
+      /* =========================
+      レスポンシブ
+    ========================= */
+      @media (max-width: 900px) {
+          .top-hero {
+              grid-template-columns: 1fr;
+          }
+
+          .slider-track {
+              padding: 12px 16px;
+          }
+
+          .arrow {
+              display: none;
+          }
+
+          .profile-layout {
+              grid-template-columns: 1fr;
+          }
+
+          .profile-sticky {
+              position: static;
+          }
+      }
