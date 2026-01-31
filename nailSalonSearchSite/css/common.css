@@ -1,0 +1,337 @@
+/* 直すところ
+明朝体で統一感
+ナビゲーション */
+
+
+body {
+    background-color: #fff;
+    background-image: linear-gradient(#fcb9c652 1px, transparent 0),
+        linear-gradient(90deg, #fcb9c652 1px, transparent 0);
+    background-size: 40px 40px;
+    margin: 0;
+}
+
+#header {
+    height: 5rem;
+    background-color: #FFA0B3;
+    margin-bottom: 8rem;
+    font-family: "Kapakana", cursive;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+}
+
+.search-bar {
+    width: 90vw;
+    margin: auto;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    padding: 1rem;
+    text-align: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    margin-bottom: 6rem;
+    color: #595959;
+}
+
+a {
+    text-decoration: none;
+    color: #595959;
+}
+
+a.bar-select {
+    color: #0a0a0a;
+    font-weight: bolder;
+}
+
+.logo {
+    font-size: 5rem;
+    font-family: "Kapakana", cursive;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+    justify-content: center;
+}
+
+.logo-small {
+    font-size: 2rem;
+    font-family: "Kapakana", cursive;
+    font-optical-sizing: auto;
+    font-weight: 400;
+}
+
+#main {
+    width: 60%;
+    margin: auto;
+
+}
+
+#main h1,
+#main h2 {
+    margin-top: 0.7rem;
+}
+
+h2 {
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+h2 {
+    margin-top: 3rem;
+    font-size: 1.3rem;
+    border-left: 4px solid #f2a6b6;
+    padding-left: 0.5rem;
+}
+
+
+#footer {
+    font-family: "PT Serif", serif;
+    font-weight: 300;
+    font-style: normal;
+    background-color: hsl(347, 67%, 88%, 0.6);
+    text-align: center;
+}
+
+
+.btn button {
+    padding: 10.7rem;
+    margin: 0.5 0;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    font-family: "M PLUS 1 Code", monospace;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.btn {
+    border-radius: 10px;
+    margin: auto 0;
+    width: 10rem;
+    width: min(360px, 90%);
+    height: 3rem;
+    margin: 0 auto;
+    display: block;
+    margin-bottom: 8rem;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, .60);
+    border: none;
+    background: #ffa0b39a;
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, .10);
+
+    font-weight: 900;
+    font-size: 18px;
+    color: rgba(40, 25, 30, .82);
+
+    cursor: pointer;
+    transition: transform .12s ease, background .12s ease;
+}
+
+
+
+
+.salon-card {
+    display: block;
+    padding: 2.5rem;
+    border-radius: 36px;
+    width: 56rem;
+}
+
+.salon-menus {
+    margin-top: 1.5rem;
+}
+
+.salon-name {
+    font-family: "PT Serif", serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 2.3rem;
+}
+
+/* search.phpとmenu.php共通 */
+.salon-thumb {
+    flex: 0 0 120px;
+    /* 左の幅（pxでも%でもOK） */
+    width: 13rem;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    margin-bottom: 8px;
+}
+
+.salon-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* 右側のメニュー部分 */
+/* カード全体を縦に並べる */
+.menu-list {
+    display: flex;
+    flex-direction: column;
+    /* ←縦並び */
+    gap: 16px;
+    /* カード同士の間隔 */
+    margin: auto;
+    padding: 0;
+    list-style: none;
+}
+
+/* 1枚のカードの中で画像＋テキストを横並びに */
+.menu-item {
+    display: flex;
+    align-items: flex-start;
+    background-color: #F5CCD5;
+    /* box-shadow: 0 0 8px gray; */
+    /* border: 1px solid rgba(159, 159, 159, 0.75); */
+    border: 1px solid #000;
+    padding: 1.5rem;
+    border-radius: 10px;
+    width: 42rem;
+    text-decoration: none;
+    /* link下線消す */
+    color: #000;
+}
+
+small {
+    color: #595959;
+}
+
+.tag.selected {
+    background: #F5CCD5;
+    font-weight: bold;
+}
+
+
+.menu-thumb {
+    width: 10rem;
+    aspect-ratio: 1/1;
+    position: relative;
+    overflow: hidden;
+    margin-left: 0.7rem;
+}
+
+/* テキスト部分 */
+.menu-card {
+    flex: 1;
+}
+
+.menu-kategori {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    padding: 0.3rem;
+    border-bottom: 1px solid #000;
+}
+
+.menu-time {
+    margin-right: 2rem;
+    text-align: right;
+}
+
+.reserveLink {
+    margin-left: 100px;
+}
+
+/* ===== メニューカード全体 ===== */
+.menu-item {
+    display: flex;
+    gap: 1.5rem;
+    background: linear-gradient(135deg,
+            #ffe3ea,
+            #ffd1dc);
+    border-radius: 24px;
+    padding: 1.8rem;
+    width: 42rem;
+    text-decoration: none;
+    color: #000;
+    border: none;
+    box-shadow: 0 10px 25px rgba(240, 170, 180, 0.35);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.menu-thumb {
+    width: 10rem;
+    aspect-ratio: 1 / 1;
+    border-radius: 28px;
+    background: #ffd6df;
+    /* 外側のピンク */
+    padding: 10px;
+    box-shadow:
+        0 0 0 8px rgba(255, 214, 223, 0.6),
+        0 18px 40px rgba(240, 170, 180, 0.45);
+}
+
+.menu-thumb::after {
+    position: absolute;
+    content: '';
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    box-shadow: inset 0 0 10px 10px #F5CCD5;
+}
+
+.menu-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    display: block;
+}
+
+.menu-card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem 0;
+
+}
+
+.menu-kategori {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-bottom: none;
+    padding: 0;
+}
+
+.menu-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #3a2a2a;
+}
+
+.menu-smalltitle {
+    background: #ffdee5;
+    padding: 6px 10px;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    color: #b36b7a;
+    margin-left: 0.5rem;
+    margin: auto 0;
+}
+
+.menu-card>small {
+    color: #7a5a5a;
+    line-height: 1.5;
+}
+
+.menu-time {
+    margin-top: auto;
+    text-align: right;
+    font-weight: 600;
+    color: #4a2e2e;
+}
+
+.menu-card div:last-child small {
+    font-size: 0.75rem;
+    color: #c07b8b;
+    margin-right: 6px;
+}

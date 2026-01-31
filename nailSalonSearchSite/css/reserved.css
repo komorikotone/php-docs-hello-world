@@ -1,0 +1,22 @@
+#main {
+  width: 26rem;
+  margin: 0 auto;
+}
+
+ul {
+  list-style: none;
+  /* 丸ポチ消す */
+  padding-left: 0;
+  /* 左の余白も消したいとき */
+}
+
+.reserve-comp {
+  padding: 4rem;
+  background: rgba(255, 245, 248, 0.7);
+  border-radius: 20px;
+  margin-bottom: 5rem;
+}
+
+.reserved-info {
+  margin-bottom: 0.7rem;
+}

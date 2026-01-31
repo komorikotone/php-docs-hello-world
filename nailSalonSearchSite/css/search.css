@@ -1,0 +1,102 @@
+#main {
+    width: 58rem;
+    margin: 0 auto;
+}
+
+/* ショップカード */
+
+.menu-list {
+    display: flex;
+    /* background-color: blue; */
+    flex-direction: row;
+    margin: 0;
+}
+
+/* .fade-text {
+    width: 15rem;
+} */
+
+.salon-top {
+    display: flex;
+    gap: 20px;
+}
+
+.salon-card {
+    background: rgba(255, 245, 248, 0.7);
+    margin: 5rem 0;
+}
+
+a.salon-card {
+    color: #000;
+}
+
+
+.menu-setumei {
+    width: 15rem;
+    white-space: nowrap;
+    /* 1行にする */
+    overflow: hidden;
+    /* はみ出した部分は隠す */
+    text-overflow: ellipsis;
+}
+
+.menu-item {
+    background-color: #F5CCD5;
+    padding: 1rem 0.5rem;
+    width: 26rem;
+    text-decoration: none;
+    /* link下線消す */
+    color: #000;
+}
+
+.menu-thumb {
+    width: 9rem;
+    aspect-ratio: 1/1;
+    position: relative;
+}
+
+
+
+.seach-menu-title {
+    font-size: 1.2rem;
+    font-weight: bolder;
+}
+
+.menu-time {
+    text-align: right;
+    margin-right: 1.5rem;
+}
+
+.salon-menus {
+    display: flex;
+}
+
+.search-condition {
+  border-radius: 20px;
+  padding: 1.5rem 2rem;
+  margin-bottom: 4rem;
+}
+
+.search-condition h3 {
+  font-size: 0.9rem;
+  letter-spacing: 0.12em;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.condition-tags {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.condition-tag {
+  background: #fadbe2c9;
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-size: 0.8rem;
+  color: #444;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+}
+
+

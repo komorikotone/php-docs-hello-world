@@ -1,0 +1,107 @@
+     #main {
+         width: 49rem;
+         margin: 0 auto;
+     }
+
+
+     .custom {
+         margin-bottom: 5rem;
+         text-align: center;
+         font-size: 2rem;
+         font-weight: 500;
+     }
+
+     .form-card {
+         background-color: antiquewhite;
+     }
+
+     .reserve-box {
+         background: rgba(255, 245, 248, 0.7);
+         padding: 5rem 7rem;
+         padding-bottom: 2rem;
+         border-radius: 30px;
+     }
+
+     .tag.selected {
+         background: #F5CCD5;
+         font-weight: bold;
+     }
+
+
+     input.hissu,
+     input[type="text"].hissu,
+     input[type="date"].hissu,
+     input[type="time"].hissu {
+         background-color: rgb(255, 238, 236);
+     }
+
+     #reserve-form {
+         gap: 1rem;
+         margin-top: 5rem;
+     }
+
+
+     .menu-setumei {
+         padding-right: 1rem;
+     }
+
+     .menu-item {
+         background-color: #F5CCD5;
+         padding: 1rem 0.5rem;
+         width: 33rem;
+         text-decoration: none;
+         /* link下線消す */
+         color: #000;
+     }
+
+     .menu-thumb {
+         width: 9rem;
+         aspect-ratio: 1/1;
+         position: relative;
+     }
+
+
+
+     .seach-menu-title {
+         font-size: 1.2rem;
+         font-weight: bolder;
+     }
+
+     .menu-time {
+         text-align: right;
+         margin-right: 1.5rem;
+     }
+
+     .errMsg {
+         color: red;
+         font-size: small;
+         margin-bottom: 0.3rem;
+     }
+
+     .message {
+         height: 1rem;
+         font-weight: bold;
+         color: red;
+         margin: 3rem 0 1.5rem 0;
+     }
+
+     .btn {
+         margin-top: 5rem;
+         margin-bottom: 5rem;
+     }
+
+     .btn-a {
+         margin: 0;
+         width: 13rem;
+         background: #ffb9c78a;
+     }
+
+     .btn-all {
+         display: flex;
+         margin-top: 5rem;
+         margin: 0 auto;
+         gap: 2rem;
+         width: 30rem;
+         padding: 3rem 0;
+         margin-bottom: 5rem;
+     }

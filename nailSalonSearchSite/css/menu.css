@@ -1,0 +1,33 @@
+#main {
+    width: 50rem;
+    margin: 0 auto;
+}
+
+.salon-card {
+    margin-bottom: 5rem;
+}
+
+
+a.menu-item {
+    text-decoration: none;
+    color: #000000;
+}
+
+
+.menu-list {
+    gap: 3rem;
+}
+
+.tag.selected {
+    background: #F5CCD5;
+    font-weight: bold;
+}
+
+.reserveLink {
+    margin-left: 100px;
+}
+
+.fade-text {
+    width: 35rem;
+    padding: 2rem ;
+}
