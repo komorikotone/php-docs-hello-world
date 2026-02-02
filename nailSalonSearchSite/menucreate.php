@@ -108,37 +108,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/reserve.css">
     <link rel="stylesheet" href="./css/menucreate.css">
-    <style>
-        /* ファイルボタン見た目 */
-        input[type="file"] {
-            width: 100%;
-            max-width: 33rem;
-            padding: .6rem .8rem;
-            border-radius: 12px;
-            border: 1px solid rgba(0, 0, 0, .15);
-            background: rgba(255, 245, 248, .7);
-        }
 
-        input[type="file"]::file-selector-button {
-            margin-right: .8rem;
-            padding: .55rem .9rem;
-            border-radius: 999px;
-            border: 0;
-            background: #F5CCD5;
-            cursor: pointer;
-            font-weight: 600;
-        }
-
-        input[type="file"]::file-selector-button:hover {
-            filter: brightness(.96);
-        }
-
-        /* エラー時の強調（hissuクラス付く想定） */
-        .hissu {
-            border-color: #ff5a7a !important;
-            box-shadow: 0 0 0 3px rgba(255, 90, 122, .15);
-        }
-    </style>
 </head>
 
 <body>
@@ -147,6 +117,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     </header>
 
     <div class="search-bar">
+        <a href="index.php">トップ</a> ▶
         <a href="shop_create.php">管理：サロン登録</a> ▶
         <a class="bar-select" href="menu_create.php">管理：メニュー登録</a>
     </div>
@@ -236,14 +207,18 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
                             <button type="submit" class="btn">この内容で登録する</button>
 
-                            <div class="btn-all">
-                                <button type="button" class="btn btn-a" onclick="location.href='menu.php?salonid=<?= (int)$preSalonId ?>'">メニュー一覧で確認</button>
-                                <button type="button" class="btn btn-a" onclick="location.href='search.php'">検索へ戻る</button>
-                            </div>
+
                     </form>
 
-                </div>
+
             </section>
+
+            <div class="btn-all">
+                <button type="button" class="btn btn-a" onclick="location.href='menu.php?salonid=<?= (int)$preSalonId ?>'">メニュー一覧で確認</button>
+                <button type="button" class="btn btn-a" onclick="location.href='shopcreate.php'">サロン登録へ戻る</button>
+            </div>
+
+        </div>
         </div>
     </main>
 

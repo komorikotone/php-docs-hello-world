@@ -221,7 +221,7 @@ foreach ($shops as $shop) {
             </div>
           </div>
 
-          <button type="submit" class="btn">この条件で検索</button>
+          <button type="submit" class="btn-c btn">この条件で検索</button>
         </div>
       </form>
     </div>

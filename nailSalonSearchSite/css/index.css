@@ -21,7 +21,7 @@
     min-width: 1200px;
     width: 64rem;
     height: 43rem;
-    margin: 0 14rem auto;
+    margin: 0 12rem auto;
 }
 
 .hero-left {
@@ -33,7 +33,7 @@
 .hero-right {
     width: 33rem;
     margin: auto 0;
-    margin-left: 3rem;
+    margin-left: 4rem;
 }
 
 
@@ -513,12 +513,13 @@ button.btn {
     background-color: #f5ccd5;
     height: 2rem;
     width: 13rem;
+    margin-bottom: 0;
 }
 
 
-.btn {
+.btn-c {
     margin-bottom: 0;
-height: 2rem;
+    height: 3rem;
 }
 
 .btn-b {

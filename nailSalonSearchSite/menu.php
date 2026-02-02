@@ -81,7 +81,7 @@ $menus = $stmtmenu->fetchAll(PDO::FETCH_ASSOC);
     ▶
     <a href="search.php">２.サロン選択</a>
     ▶
-    <a class="bar-select"href="menu.php">３.メニュー選択</a>
+    <a class="bar-select" href="menu.php">３.メニュー選択</a>
     ▶
     <a href="#">４.予約情報入力</a>
     ▶
@@ -102,6 +102,8 @@ $menus = $stmtmenu->fetchAll(PDO::FETCH_ASSOC);
 
       <!-- 住所・最寄り駅 -->
       <p>
+        <?= htmlspecialchars($shop['都道府県']) ?>
+        <?= htmlspecialchars($shop['市区町村']) ?>
         <?= htmlspecialchars($shop['住所']) ?> /
         <?= htmlspecialchars($shop['最寄り駅']) ?>駅
       </p>
@@ -161,6 +163,9 @@ $menus = $stmtmenu->fetchAll(PDO::FETCH_ASSOC);
         </div>
       <?php endif; ?>
     </div>
+
+
+ 
 
     <!-- 検索画面に戻る -->
     <button class="btn" onclick="location.href='./search.php'">

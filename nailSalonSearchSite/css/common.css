@@ -93,40 +93,67 @@ h2 {
     text-align: center;
 }
 
-
-.btn button {
-    padding: 10.7rem;
-    margin: 0.5 0;
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    font-family: "M PLUS 1 Code", monospace;
-    font-optical-sizing: auto;
-    font-weight: 300;
-    font-style: normal;
-}
-
 .btn {
-    border-radius: 10px;
-    margin: auto 0;
-    width: 10rem;
-    width: min(360px, 90%);
-    height: 3rem;
-    margin: 0 auto;
-    display: block;
-    margin-bottom: 8rem;
-    border-radius: 999px;
-    border: 1px solid rgba(255, 255, 255, .60);
-    border: none;
-    background: #ffa0b39a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    box-shadow: 0 10px 25px rgba(0, 0, 0, .10);
+    height: 3rem;
+    width: min(360px, 90%);
+    padding: 7px 22px;
+
+    margin: 24px auto 8rem;
+    /* 中央寄せ */
+    border-radius: 999px;
+    border: 1px solid #f2a6b67d;
+
+    background: #ffa0b39a;
+    color: rgba(40, 25, 30, .82);
+
 
     font-weight: 900;
     font-size: 18px;
-    color: rgba(40, 25, 30, .82);
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    box-shadow:
+        0 18px 28px rgba(0, 0, 0, .12),
+        0 6px 0 rgba(160, 103, 114, 0.55);
 
     cursor: pointer;
-    transition: transform .12s ease, background .12s ease;
+    transition: transform .12s ease, box-shadow .12s ease, filter .12s ease;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.02);
+}
+
+.btn:active {
+    transform: translateY(3px);
+}
+
+/* 押した時：沈まないで“ぷにっ” */
+.btn:active {
+    transform: scale(.985);
+}
+
+/* ついでに：押してる間ちょい柔らかく（任意） */
+.btn:active {
+    filter: brightness(1.01);
+}
+
+/* CTAは“確定感”を出す：沈まない・光だけ変える */
+.btn:active {
+    transform: scale(.995);
+    /* ほぼ動かさない */
+    filter: brightness(.98);
+    /* ちょい締まる */
+    box-shadow:
+        0 12px 20px rgba(0, 0, 0, .10),
+        0 4px 0 rgba(160, 103, 114, .50);
+    /* 下の影を少し短く */
 }
 
 
@@ -194,6 +221,39 @@ h2 {
     text-decoration: none;
     /* link下線消す */
     color: #000;
+    border: #F5CCD5 1px solid;
+}
+
+.menu-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+
+    /* 影は薄めでOK（ぷにっは動きで出す） */
+    box-shadow:
+        0 10px 20px rgba(0, 0, 0, .08),
+        0 1px 0 rgba(255, 255, 255, .35) inset;
+
+    transition:
+        transform .14s cubic-bezier(.2, .9, .2, 1),
+        box-shadow .14s ease,
+        filter .14s ease;
+    will-change: transform;
+    border: #F5CCD5 1px solid;
+}
+
+/* つや（ぷるっと見える）※色は変えないで光だけ足す */
+.menu-item::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(120% 90% at 20% 12%,
+            rgba(255, 255, 255, .45) 0%,
+            rgba(255, 255, 255, .10) 35%,
+            transparent 60%);
+    pointer-events: none;
+    opacity: .9;
+    border: #F5CCD5 1px solid;
 }
 
 small {
@@ -334,4 +394,59 @@ small {
     font-size: 0.75rem;
     color: #c07b8b;
     margin-right: 6px;
+}
+
+.btn {
+    background: linear-gradient(180deg, #ffd8e1f5 0%, #ffccd7 55%, #ffbdcb 100%);
+    border: 1px solid rgba(255, 90, 140, .22);
+
+    box-shadow:
+        0 14px 24px rgba(0, 0, 0, .08),
+        0 6px 0 rgba(160, 103, 114, .22);
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.02);
+    box-shadow:
+        0 18px 28px rgba(0, 0, 0, .09),
+        0 7px 0 rgba(160, 103, 114, .24);
+}
+
+.btn:active {
+    transform: translateY(3px);
+    filter: brightness(.99);
+
+    box-shadow:
+        0 8px 14px rgba(0, 0, 0, .07),
+        0 3px 0 rgba(160, 103, 114, .20),
+        inset 0 6px 14px rgba(255, 143, 176, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, .45);
+}
+
+
+@keyframes btnShine {
+    0% {
+        transform: translateX(-20%) skewX(-18deg);
+        opacity: 0;
+    }
+
+    22% {
+        opacity: .9;
+    }
+
+    55% {
+        opacity: .9;
+    }
+
+    100% {
+        transform: translateX(240%) skewX(-18deg);
+        opacity: 0;
+    }
+}
+
+
+/* active：今の“沈む”動きは最高なので、気持ちだけぷにっと */
+.btn:active {
+    transform: translateY(3px) scale(.99);
 }

@@ -60,7 +60,7 @@ if (!$menu) {
     <link rel="stylesheet" href="./css/reserve.css">
 </head>
 
-<body onload="resetDo()">
+<body>
     <header id="header">
         <div class="logo">milky <span class="logo-small">nailsalonsite</span></div>
     </header>
@@ -93,7 +93,7 @@ if (!$menu) {
 
                     <!-- 予約フォーム -->
                     <section class="reserve-form">
-                        <form id="reserveForm" action="reserved.php" method="post" onsubmit="return resetDo()">
+                        <form id="reserveForm" action="reserved.php" method="post" onsubmit="showErrors=true; return resetDo(true);">
                             <div class="menu-item">
 
                                 <!-- メニュー画像 -->
@@ -137,28 +137,29 @@ if (!$menu) {
                     <input type="hidden" name="menuid" value="<?= htmlspecialchars($menu['id'], ENT_QUOTES, 'UTF-8') ?>">
                     <input type="hidden" name="salonid" value="<?= htmlspecialchars($menu['salonid'], ENT_QUOTES, 'UTF-8') ?>">
                     <div class="message" id="msg"></div>
+
                     <div>
                         <label>お名前&#127872;</label><br>
-                        <input type="text" name="nameFull" style="width: 10rem; height:1.5rem" id="nameFull" class="hissu" oninput="resetDo()" placeholder="お名前入力">
+                        <input type="text" name="nameFull" style="width: 10rem; height:1.5rem" id="nameFull" placeholder="お名前入力">
                         <div class="errMsg" id="nameError"></div>
                     </div>
 
                     <div>
                         <label>電話番号 &#x1F4DE;</label><br>
-                        <input type="text" name="telFull" style="width: 10rem; height:1.5rem" id="telFull" class="hissu" oninput="resetDo()" placeholder="ハイフンなし">
+                        <input type="text" name="telFull" style="width: 10rem; height:1.5rem" id="telFull" placeholder="ハイフンなし">
                         <div class="errMsg" id="telError"></div>
                     </div>
 
                     <div>
                         <label>希望日 &#129668;&#129498;&#8205;&#9792;&#65039;</label><br>
-                        <input type="date" name="dateFull" style="height: 1.5rem;" id="dateFull" class="hissu"
-                            value="<?= htmlspecialchars($selectedDate, ENT_QUOTES, 'UTF-8') ?>" oninput="resetDo()">
+                        <input type="date" name="dateFull" style="height: 1.5rem;" id="dateFull"
+                            value="<?= htmlspecialchars($selectedDate, ENT_QUOTES, 'UTF-8') ?>">
                         <div class="errMsg" id="dateError"></div>
                     </div>
 
                     <div>
                         希望時間&#128171;&#127775; <br>
-                        <input type="time" name="timeFull" style="height: 1.5rem;" id="timeFull" class="hissu" oninput="resetDo()">
+                        <input type="time" name="timeFull" style="height: 1.5rem;" id="timeFull">
                         <div class="errMsg" id="timeError"></div>
                     </div>
 
@@ -178,5 +179,5 @@ if (!$menu) {
         </div>
     </main>
     <footer id="footer">milky salon site</footer>
-    <script src="./javascript/reserve.js"></script>
+    <script src="./js/reserve.js"></script>
 </body>

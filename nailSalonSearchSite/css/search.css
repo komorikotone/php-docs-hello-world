@@ -72,31 +72,69 @@ a.salon-card {
 }
 
 .search-condition {
-  border-radius: 20px;
-  padding: 1.5rem 2rem;
-  margin-bottom: 4rem;
+    border-radius: 20px;
+    padding: 1.5rem 2rem;
+    margin-bottom: 4rem;
 }
 
 .search-condition h3 {
-  font-size: 0.9rem;
-  letter-spacing: 0.12em;
-  color: #666;
-  margin-bottom: 1rem;
+    font-size: 1rem;
+    letter-spacing: 0.12em;
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.change {
+    font-size: 0.9rem;
+    letter-spacing: 0.12em;
+    color: #666;
+    margin-bottom: 1rem;
+    margin-left: 1rem;
 }
 
 .condition-tags {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
 }
 
 .condition-tag {
-  background: #fadbe2c9;
-  border-radius: 999px;
-  padding: 6px 14px;
-  font-size: 0.8rem;
-  color: #444;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+    background: #fbd4dd;
+    border-radius: 999px;
+    border: #F5CCD5 1px solid;
+    padding: 6px 14px;
+    font-size: 0.8rem;
+    color: #444;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
 }
 
+/* ぷにっと感：条件タグ */
+.condition-tag {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
 
+    /* 影は薄めにして“動き”でぷに感を出す */
+    box-shadow:
+        0 6px 14px rgba(0, 0, 0, .07),
+        inset 0 1px 0 rgba(255, 255, 255, .35);
+
+    transition:
+        transform .14s cubic-bezier(.2, .9, .2, 1),
+        box-shadow .14s ease,
+        filter .14s ease;
+    will-change: transform;
+}
+
+/* つや（ぷるっと） */
+.condition-tag::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(120% 90% at 25% 15%,
+            rgba(255, 255, 255, .45) 0%,
+            rgba(255, 255, 255, .12) 45%,
+            transparent 62%);
+    pointer-events: none;
+    opacity: .9;
+}

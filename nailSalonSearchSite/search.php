@@ -139,6 +139,8 @@ $stmtmenu = $pdo->prepare($sqlmenu);
 
         <form method="get" id="searchForm" action="search.php">
             <div class="search-condition">
+
+
                 <h3>検索条件</h3>
 
                 <div class="condition-tags">
@@ -146,7 +148,7 @@ $stmtmenu = $pdo->prepare($sqlmenu);
                     <!-- 都道府県 -->
                     <span class="condition-tag">
                         都道府県：<span id="prefLabel" onclick="prefChange()">
-                            <?= $prefecture === '' ? '指定なし' : htmlspecialchars($prefecture) ?>
+                            <?= $prefecture === '' ? '指定なし' : htmlspecialchars($prefecture) ?><small> ▼</small>
                         </span>
 
                         <select id="prefSelect" name="都道府県" style="display:none">
@@ -159,7 +161,7 @@ $stmtmenu = $pdo->prepare($sqlmenu);
                     <!-- 市区町村 -->
                     <span class="condition-tag">
                         市区町村：<span id="cityLabel" onclick="cityChange()">
-                            <?= $city === '' ? '指定なし' : htmlspecialchars($city) ?>
+                            <?= $city === '' ? '指定なし' : htmlspecialchars($city) ?><small> ▼</small>
                         </span>
 
                         <select id="citySelect" name="市区町村" style="display:none">
@@ -175,7 +177,7 @@ $stmtmenu = $pdo->prepare($sqlmenu);
                     <!-- ✅ 駅名 -->
                     <span class="condition-tag">
                         駅名：<span id="stationLabel" onclick="stationChange()">
-                            <?= $station === '' ? '指定なし' : htmlspecialchars($station) ?>
+                            <?= $station === '' ? '指定なし' : htmlspecialchars($station) ?> <small>▼</small>
                         </span>
 
                         <select id="stationSelect" name="最寄り駅" style="display:none">
@@ -186,9 +188,11 @@ $stmtmenu = $pdo->prepare($sqlmenu);
                                 </option>
                             <?php endforeach; ?>
                         </select>
-                    </span>
+                    </span> <br>
+
 
                 </div>
+
             </div>
         </form>
 
@@ -296,11 +300,12 @@ $stmtmenu = $pdo->prepare($sqlmenu);
 
     </main>
 
-    <script src="./javascript/search.js?v=2"></script>
+    <script src="./js/search.js?v=2"></script>
 
     <footer id="footer">
         milky salon site
     </footer>
+
 
 </body>
 

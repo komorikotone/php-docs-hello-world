@@ -25,7 +25,8 @@
     padding: 0.2rem 0.9rem;
     border-radius: 999px;
     border: 0;
-    background: #F5CCD5;
+    background: linear-gradient(180deg, #ffd8e1f5 0%, #ffccd7 55%, #ffbdcb 100%);
+    border: 1px solid rgba(255, 90, 140, .22);
     font-weight: 600;
     cursor: pointer;
     white-space: nowrap;
@@ -41,11 +42,37 @@
 }
 
 
-.file-ui.hissu {
-    border-color: #ff5a7a !important;
+
+.reserve-box {
+    padding: 5rem 7rem;
+}
+
+/* ファイルボタン見た目 */
+input[type="file"] {
+    width: 100%;
+    max-width: 33rem;
+    padding: .6rem .8rem;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 0, 0, .15);
+    background: rgba(255, 245, 248, .7);
+}
+
+input[type="file"]::file-selector-button {
+    margin-right: .8rem;
+    padding: .55rem .9rem;
+    border-radius: 999px;
+    border: 0;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+input[type="file"]::file-selector-button:hover {
+    filter: brightness(.96);
+}
+
+/* エラー時の強調（hissuクラス付く想定） */
+.hissu {
+    border-color: #ff5a7a ;
     box-shadow: 0 0 0 3px rgba(255, 90, 122, .15);
 }
 
-  .reserve-box {
-         padding: 5rem 7rem;
-     }

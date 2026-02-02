@@ -84,8 +84,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   </header>
 
   <div class="search-bar">
-    <a class="bar-select" href="shop_create.php">管理：サロン登録</a> ▶
-    <a href="menu_create.php">管理：メニュー登録</a>
+    <a href="index.php">トップ</a> ▶
+    <a class="bar-select" href="shopcreate.php">管理：サロン登録</a> ▶
+    <a href="menucreate.php">管理：メニュー登録</a>
   </div>
 
   <main id="main">
@@ -100,10 +101,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
           <?php endif; ?>
 
           <form id="menuForm" method="post" enctype="multipart/form-data" class="form-grid"
-         
-         
-         
-          onsubmit="showErrors=true; return resetDo(true);">
+
+
+
+            onsubmit="showErrors=true; return resetDo(true);">
 
 
             <div class="message" id="msg"></div>
@@ -117,8 +118,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
             <div>
               <label>都道府県</label><br>
-              <input type="text" name="都道府県" id="pref" style="width: 10rem; height:1.8rem"
-                value="<?= h($_POST["都道府県"] ?? "") ?>" placeholder="岐阜県 など">
+              <select type="text" name="都道府県" id="pref" style="width: 10rem; height:1.8rem"
+                value="<?= h($_POST["都道府県"] ?? "") ?>">
+                <option value="">未選択</option>
+                <option value="愛知県">愛知県</option>
+                <option value="岐阜県">岐阜県</option>
+                <option value="三重県">三重県</option>
+              </select>
               <div class="errMsg" id="prefError"></div>
             </div><br>
 
@@ -181,7 +187,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
       </section>
     </div>
     <div class="btn-all">
-      <button type="button" class="btn btn-a" onclick="location.href='search.php'">検索で確認</button>
+      <button type="button" class="btn btn-a" onclick="location.href='index.php'">トップページ</button>
+      <button type="button" class="btn btn-a" onclick="location.href='search.php'">検索で画面確認</button>
       <button type="button" class="btn btn-a" onclick="location.href='menucreate.php'">メニュー登録へ</button>
     </div>
   </main>

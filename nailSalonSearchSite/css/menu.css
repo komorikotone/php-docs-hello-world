@@ -29,5 +29,12 @@ a.menu-item {
 
 .fade-text {
     width: 35rem;
-    padding: 2rem ;
+    padding: 2rem;
+}
+
+.map iframe {
+    display: block;
+    width: 100%;
+    height: 300px;
+    border: 0;
 }
